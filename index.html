@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app="rkApp"  ng-controller="TodoListController">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" 
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="math.min.js"></script>
+    <script src="script.js"></script>
+	<style>
+		body{
+			padding: 20px;
+		}
+        button, input, select, textarea {
+            margin-bottom: 15px;
+        }
+        .form-inline label {
+            width: 50px;
+            margin-bottom: 20px;
+        }
+	</style>
+  </head>
+  <body>
+    <h2>Curve Fitting</h2>
+    <br>
+    <form class="form-inline">
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="submit" class="btn btn-default" value="start" name="start" ng-click="start()">
+            </div>
+        </div>
+    </form>
+    <br><br>
+    <div>
+    {{resultString}}
+    </div>
+  </body>
+</html>

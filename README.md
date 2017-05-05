@@ -1,2 +1,8 @@
-# simple-numerical-curve-fitting
-Simple use of numerical method of curve fitting using JavaScript
+# curve-fitting
+A simple curve fitting algorithm in JavaScript
+
+
+obs.: it's using math.js, see more at http://mathjs.org/docs/index.html
+
+
+Made in PUC Minas university - degree in computer engineering
