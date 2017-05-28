@@ -1,11 +1,17 @@
 <!doctype html>
 <html ng-app="rkApp"  ng-controller="TodoListController">
   <head>
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" 
           integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="function-plot.js"></script>
     <script src="math.min.js"></script>
     <script src="script.js"></script>
+
 	<style>
 		body{
 			padding: 20px;
@@ -23,15 +29,30 @@
     <h2>Curve Fitting</h2>
     <br>
     <form class="form-inline">
+        <div class="col-sm-10" ng-repeat="p in points">
+            X &nbsp; <input type="" name="" ng-model="p[0]">
+            Y &nbsp; <input type="" name="" ng-model="p[1]"><br>
+        </div>
+
         <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
+            <div class="col-sm-10">
                 <input type="submit" class="btn btn-default" value="start" name="start" ng-click="start()">
             </div>
         </div>
     </form>
-    <br><br>
-    <div>
-    {{resultString}}
+    <div ng-show="finished">
+        <br><br>
+        <b>  Equation: {{resultString[0]}}</b>
+        <br> Error 1 : {{resultError[0]}} <br><br>
+        <div id="plotType1"></div>
+        <br><hr><br>
+        <b>  Equation: {{resultString[1]}}</b>
+        <br> Error 2 : {{resultError[1]}} <br><br>
+        <div id="plotType2"></div>
+        <br><hr><br>
+        <b>  Equation: {{resultString[2]}}</b>
+        <br> Error 3 : {{resultError[2]}} <br><br>
+        <div id="plotType3"></div>
     </div>
   </body>
 </html>
