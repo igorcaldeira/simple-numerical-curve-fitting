@@ -36,7 +36,7 @@ app.controller('TodoListController', ['$scope', function($scope) {
 
             for (let i = $scope.points.length - 1; i >= 0; i--) {
                 for (let j = $scope.points[i].length - 1; j >= 0; j--) {
-                    $scope.points[i][j] = parseInt($scope.points[i][j]);
+                    $scope.points[i][j] = parseFloat($scope.points[i][j]);
                 }
             }
 
