@@ -42,10 +42,10 @@ app.controller('TodoListController', ['$scope', function($scope) {
 
             $scope.defineCoeMatrix($scope.points, cont);
 
-            // console.log("$scope.arrayA");
-            // console.log($scope.arrayA);
-            // console.log("$scope.arrayB");
-            // console.log($scope.arrayB);
+            console.log("$scope.arrayA");
+            console.log($scope.arrayA);
+            console.log("$scope.arrayB");
+            console.log($scope.arrayB);
 
             let matrixA = math.matrix($scope.arrayA);
             let matrixB = math.matrix($scope.arrayB);
@@ -55,25 +55,25 @@ app.controller('TodoListController', ['$scope', function($scope) {
             let rightResult = math.multiply(matrixAt, matrixB);
             let solveA = math.lusolve(leftResult, rightResult);
 
-            // console.log("matrixA");
-            // console.log(matrixA);
-            // console.log("matrixB");
-            // console.log(matrixB);
-            // console.log("leftResult");
-            // console.log(leftResult);
-            // console.log("rightResult");
-            // console.log(rightResult);
-            // console.log("solveA");
-            // console.log(solveA);
+            console.log("matrixA");
+            console.log(matrixA);
+            console.log("matrixB");
+            console.log(matrixB);
+            console.log("leftResult");
+            console.log(leftResult);
+            console.log("rightResult");
+            console.log(rightResult);
+            console.log("solveA");
+            console.log(solveA);
 
             let stringEquation = "";
 
             if(cont === 1)
                 stringEquation = "y = " + Math.round10(solveA._data[0], -6)+ "x + " + Math.round10(solveA._data[1], -6);
             else if(cont === 2)
-                stringEquation = "y = (" + Math.round10(solveA._data[0], -6)+ "x)^2 + " + Math.round10(solveA._data[1], -6) + "x + "+ Math.round10(solveA._data[2], -6);
+                stringEquation = "y = (" + Math.round10(solveA._data[0], -6)+ ")x^2 + " + Math.round10(solveA._data[1], -6) + "x + "+ Math.round10(solveA._data[2], -6);
             else if(cont === 3)
-                stringEquation = "y = (" + Math.round10(solveA._data[0], -6)+ "x)^3 + " + "(" + Math.round10(solveA._data[1], -6)+ "x)^2 + " + Math.round10(solveA._data[2], -6) + "x + "+ Math.round10(solveA._data[3], -6);
+                stringEquation = "y = (" + Math.round10(solveA._data[0], -6)+ ")x^3 + " + "(" + Math.round10(solveA._data[1], -6)+ ")x^2 + " + Math.round10(solveA._data[2], -6) + "x + "+ Math.round10(solveA._data[3], -6);
 
             $scope.plot(cont, stringEquation);
 
