@@ -69,11 +69,11 @@ app.controller('TodoListController', ['$scope', function($scope) {
             let stringEquation = "";
 
             if(cont === 1)
-                stringEquation = "y = " + Math.round10(solveA._data[0], -6)+ "x + " + Math.round10(solveA._data[1], -6);
+                stringEquation = `y = ${Math.round10(solveA._data[0], -6)}x + ${Math.round10(solveA._data[1], -6)}`;
             else if(cont === 2)
-                stringEquation = "y = (" + Math.round10(solveA._data[0], -6)+ ")x^2 + " + Math.round10(solveA._data[1], -6) + "x + "+ Math.round10(solveA._data[2], -6);
+                stringEquation = `y = (${Math.round10(solveA._data[0], -6)})x^2 + ${Math.round10(solveA._data[1], -6)}x + ${Math.round10(solveA._data[2], -6)}`;
             else if(cont === 3)
-                stringEquation = "y = (" + Math.round10(solveA._data[0], -6)+ ")x^3 + " + "(" + Math.round10(solveA._data[1], -6)+ ")x^2 + " + Math.round10(solveA._data[2], -6) + "x + "+ Math.round10(solveA._data[3], -6);
+                stringEquation = `y = (${Math.round10(solveA._data[0], -6)})x^3 + (${Math.round10(solveA._data[1], -6)})x^2 + ${Math.round10(solveA._data[2], -6)}x + ${Math.round10(solveA._data[3], -6)}`;
 
             $scope.plot(cont, stringEquation);
 
@@ -137,8 +137,6 @@ app.controller('TodoListController', ['$scope', function($scope) {
           grid: true
         });
     }
-
-
 
     $scope.addPoint = function(x, y){
         $scope.points.push([0,0]);
